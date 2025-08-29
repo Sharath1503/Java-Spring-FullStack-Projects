@@ -1,0 +1,15 @@
+package com.ex;
+
+import java.sql.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+public class AttendedEntity {
+	
+	private int id;
+	String branch;
+	int studentsattended;
+	@DateTimeFormat(pattern="yyyy-MM-dd")
+	private Date attendancedate;
+
+}

@@ -1,0 +1,97 @@
+
+<html>
+<head>
+<link>
+<title>Attendance Management System</title>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.heading {
+	width: 100%;
+	height: 100px;
+	background-color: green;
+	font-size: 30px;
+	color: white;
+	text-align: center;
+	padding: 20px;
+}
+
+
+#college {
+	font-size: 30px;
+	color: deeppink;
+	text-align: center;
+	padding: 20px;
+	font-family: sans-serif;
+	font-weight: 700;
+}
+
+table, td, th {
+	border: 1px solid #ddd;
+	text-align: left;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	margin: auto;
+	margin-top: 50px;
+}
+
+th, td {
+	padding: 15px;
+	text-align: center;
+}
+
+tr>th {
+	background-color: teal;
+	color: white;
+}
+
+.studentData {
+	width: 100%;
+	background-color: green;
+	padding: 15px;
+}
+</style>
+</head>
+<body>
+
+	<div class="heading">
+		<h1>Rayalaseema University</h1>
+
+
+	</div>
+
+	<h1 id="college">Attendance Management System</h1>
+	<nav
+		style="background-color: rgb(182, 190, 205); text-align: center; padding: 10px;">
+		<a href="" style="margin: 50px;">Attendance</a> <a href=""
+			style="margin: 50px;">Result</a>
+
+
+	</nav>
+
+	<br>
+	<h2>
+		Bca <a href="students/bcastudents">Click Here</a>
+	</h2>
+	</br>
+	<br>
+	<h2>
+		Bsc <a href="students/bscstudents">Click Here</a>
+	</h2>
+	</br>
+	<br>
+	<h2>
+		Bcom <a href="students/bcomstudents">Click Here</a>
+	</h2>
+	</br>
+
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+package com.ex.controller;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.ex.AttendedStudentsEntity;
+import com.ex.StudentEntity;
+import com.ex.DAO.AttendedstudentsDAO;
+import com.ex.DAO.StudentDAO;
+
+@Controller
+@RequestMapping("/students")
+public class StudentController {
+	
+	@Autowired
+	StudentDAO dao;
+	
+	@Autowired
+	AttendedstudentsDAO dao1;
+	
+	@GetMapping("/bscstudents")
+	public String DisplayBsc(Model m) {
+		List <StudentEntity> students = dao.DisplayBSCstudents();
+		System.out.println(students);
+		m.addAttribute("bscstudentslist",students);
+		return "bscstudents";
+	}
+	
+	@GetMapping("/bcastudents")
+	public String DisplayBa(Model m) {
+		List <StudentEntity> students = dao.DisplayBCAstudents();
+		m.addAttribute("bcastudentslist",students);
+		return "bcastudents";
+	}
+	
+	@GetMapping("/bcomstudents")
+	public String DisplayBcom(Model m) {
+		List <StudentEntity> students = dao.DisplayBCOMstudents();
+		m.addAttribute("bcomstudentslist",students);
+		return "bcomstudents";
+	}
+	
+	@PostMapping("/attendanceforbca")
+	public String bcaAttendance(@RequestParam("sid") Integer[] studentids, @RequestParam("dt") String dt ){
+		int i = studentids.length;
+		dao1.Attendancesave("BCA",i,dt);
+		return "redirect:/";
+	}
+	
+	@PostMapping("/attendanceforbsc")
+	public String bscAttendance(@RequestParam("sid") Integer[] studentids, @RequestParam("dt") String dt){
+		int i = studentids.length;
+		dao1.Attendancesave("BSC",i,dt);
+		return "redirect:/";
+	}
+	
+	@PostMapping("/attendanceforbcom")
+	public String bcomAttendance(@RequestParam("sid") Integer[] studentids, @RequestParam("dt") String dt){
+		int i = studentids.length;
+		dao1.Attendancesave("BCOM",i,dt);
+		return "redirect:/";
+	}
+	
+	@GetMapping("/home")
+	public String home(){
+		return "redirect:/";
+	}
+	
+	@GetMapping("/result")
+	public String AllStudents(Model m) {
+	List <AttendedStudentsEntity> students = dao1.AllStudents();
+	System.out.println(students);
+	m.addAttribute("allstudentslist",students);
+	return "allstudents";
+}
+	
+	
+
+}

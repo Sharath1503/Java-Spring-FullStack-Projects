@@ -1,0 +1,22 @@
+package com.ex.DAO;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import com.ex.StudentEntity;
+
+public class AttendedstudentsDAO {
+	
+private JdbcTemplate jdbcTemplate1;
+	
+	public void setJdbcTemplate1(JdbcTemplate jdbcTemplate) {
+		this.jdbcTemplate1 = jdbcTemplate;
+	}
+
+	
+	public int Attendancesave(String branch,int size) {
+		// TODO Auto-generated method stub
+		return jdbcTemplate1.update("insert into attendedstudents(branch,studentsattended) values(?,?)", branch,size);
+		
+	}
+
+}

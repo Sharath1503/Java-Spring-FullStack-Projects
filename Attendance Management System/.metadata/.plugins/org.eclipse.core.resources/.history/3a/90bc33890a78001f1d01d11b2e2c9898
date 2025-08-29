@@ -1,0 +1,42 @@
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="/AMS/resources/css/style.css"/>
+<title>Attendance Management System</title>
+</head>
+<body>
+
+	<div class="heading">
+		<h1>Rayalaseema University</h1>
+
+
+	</div>
+
+	<h1 id="college">Attendance Management System</h1>
+	<nav
+		style="background-color: rgb(182, 190, 205); text-align: center; padding: 10px;">
+		<a href="" style="margin: 50px;">Attendance</a> <a href=""
+			style="margin: 50px;">Result</a>
+
+
+	</nav>
+	<h2 id="college1"></h2>
+	<br>
+	<h2>
+		Bca <a href="students/bcastudents">Click Here</a>
+	</h2>
+	</br>
+	<br>
+	<h2>
+		Bsc <a href="students/bscstudents">Click Here</a>
+	</h2>
+	</br>
+	<br>
+	<h2>
+		Bcom <a href="students/bcomstudents">Click Here</a>
+	</h2>
+	</br>
+
+
+</body>
+</html>
