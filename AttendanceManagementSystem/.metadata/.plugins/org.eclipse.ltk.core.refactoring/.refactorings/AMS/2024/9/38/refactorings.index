@@ -1,0 +1,19 @@
+1726749037557	Delete element
+1726749060940	Move 'viewstudents.jsp' to 'WEB-INF'
+1726749064229	Move 'stdservlet-servlet.xml' to 'WEB-INF'
+1726749098541	Move 'stdservlet-servlet.xml' to 'views'
+1726749100373	Move 'viewstudents.jsp' to 'views'
+1726749102144	Move 'web.xml' to 'views'
+1726749117744	Move 'stdservlet-servlet.xml' to 'WEB-INF'
+1726749120067	Move 'web.xml' to 'WEB-INF'
+1726829265819	Delete element
+1726831993117	Move 'stdservlet-servlet.xml' to 'views'
+1726832011441	Move 'stdservlet-servlet.xml' to 'WEB-INF'
+1726834242068	Rename type 'attendedstudentsDAO'
+1726914297145	Delete element
+1726916674561	Move 'style.css' to 'css'
+1726916721934	Move 'css' to 'web-resources'
+1726916743712	Move 'web-resources' to 'main'
+1726916987428	Move 'web-resources' to 'webapp'
+1726916999153	Rename resource 'web-resources'
+1726917585414	Delete element

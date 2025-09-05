@@ -1,0 +1,202 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<%@ page isELIgnored="false"%>
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <title>Attendance Management System</title>
+    <style>
+      *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.heading{
+    width: 100%;
+    height: 100px; 
+    background-color: green;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    
+}
+
+.heading1{
+    width: 100%;
+    height: 100px; 
+    background-color: green;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    
+}
+#college{
+    font-size: 30px;
+    color: deeppink;
+    text-align: center;
+    padding: 20px;
+    font-family: sans-serif;
+    font-weight: 700;
+}
+
+#college1{
+    font-size: 100px;
+    color: rgb(2, 2, 2);
+    text-align: center;
+    padding: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+}
+
+
+/* --------------login form ----  */
+.login{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 400px;
+    grid-gap: 20px;
+    margin: 20px;
+
+}
+
+.image{
+    width: 100%;
+    height: 100%;
+  
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.right{
+    background-color: rgb(189, 211, 218);
+    border-radius: 20px;
+}
+#form{
+        display: flex;
+        flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10%;
+      
+
+  }
+  #form input{
+      
+      padding: 12px 20px;
+      margin: 10px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      border-radius: 5px;
+  }
+  #submit:hover{
+      background-color: teal;
+      color: black;
+      border-radius: 5px;
+  }
+
+  .login_head{
+      width: 80%;
+      margin: auto;
+      margin-top: 20px;
+      font-size: 38px;
+      background-color: green;
+        color: white;
+    text-align: center;
+    padding: 10px;
+     border-radius: 20px;   
+  }
+
+
+
+
+  table,
+td,
+th {
+border: 1px solid #ddd;
+text-align: left;
+
+}
+
+table {
+border-collapse: collapse;
+width: 100%;
+margin: auto;
+margin-top: 50px;
+
+
+}
+
+th,
+td {
+padding: 15px;
+text-align: center;
+}
+
+tr > th {
+background-color: teal;
+color: white;
+}
+
+.studentData{
+    width: 100%;
+    background-color: green;
+    padding: 15px;
+
+}
+
+    </style>
+  </head>
+  <body>
+
+    <div class="heading">
+        <h1>Rayalaseema University</h1>
+    
+    
+    </div>
+    <h1 id="college">Attendance Management System  </h1>
+
+
+
+
+    <nav style="background-color:  rgb(182, 190, 205); text-align: center; padding: 10px;">
+      <a href="/AMS/students/home" style="margin: 50px;">Attendance</a>
+      <a href="/AMS/students/result" style="margin: 50px;">Results</a>
+  </nav>
+
+
+        <table>
+            <thead>
+                <tr>
+                
+                    <th>Id</th>
+                    <th>Branch</th>
+                    <th>Total Students Present</th>
+                    <th>Date</th>
+                </tr>
+                <c:forEach var="student" items="${allstudentslist}">
+					<tr>
+						<td>${student.id}</td>
+						<td>${student.branch}</td>
+						<td>${student.studentsattended}</td>
+						<td>${student.attendancedate}</td>
+						<td><input type=checkbox name="sid" value="${student.id}"></td>
+					</tr>
+				</c:forEach>
+            </thead>
+            <tbody id="tbody">
+             </tbody>
+        </table>
+  </body>
+</html>

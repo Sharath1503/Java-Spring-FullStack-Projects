@@ -1,0 +1,31 @@
+package com.ex.DAO;
+
+import java.util.List;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+import com.ex.StudentEntity;
+import com.ex.StudentRowMapper;
+
+public class StudentDAO {
+	
+private JdbcTemplate jdbcTemplate;
+	
+	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+		this.jdbcTemplate = jdbcTemplate;
+	}
+	
+	public List<StudentEntity> DisplayBSCstudents() {
+		// TODO Auto-generated method stub
+		return jdbcTemplate.query("select * from students where branch =?", new StudentRowMapper(),"BSC");
+	}
+	
+	public List<StudentEntity> DisplayBCAstudents() {
+		// TODO Auto-generated method stub
+		return jdbcTemplate.query("select * from students where branch = ?",new StudentRowMapper(), "BCA");
+	}
+	
+	public List<StudentEntity> DisplayBCOMstudents() {
+		// TODO Auto-generated method stub
+		return jdbcTemplate.query("select * from students where branch = ?", new StudentRowMapper(),"BCOM");
+	}
+}

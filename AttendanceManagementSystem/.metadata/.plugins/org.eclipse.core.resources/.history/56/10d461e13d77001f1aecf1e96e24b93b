@@ -1,0 +1,47 @@
+package com.ex.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.ex.StudentEntity;
+import com.ex.DAO.StudentDAO;
+
+@Controller
+@RequestMapping("/students")
+public class StudentController {
+	
+	@Autowired
+	StudentDAO dao;
+	
+	@GetMapping("/bscstudents")
+	public String DisplayBsc(Model m) {
+		List <StudentEntity> students = dao.DisplayBSCstudents();
+		System.out.println(students);
+		m.addAttribute("bscstudentslist",students);
+		return "viewstudents";
+	}
+	
+	@GetMapping("/bcastudents")
+	public String DisplayBa(Model m) {
+		List <StudentEntity> students = dao.DisplayBCAstudents();
+		System.out.println(students);
+		m.addAttribute("bcastudentslist",students);
+		return "viewstudents";
+	}
+	
+	@GetMapping("/bcomstudents")
+	public String DisplayBcom(Model m) {
+		List <StudentEntity> students = dao.DisplayBCOMstudents();
+		System.out.println(students);
+		m.addAttribute("bcomstudentslist",students);
+		return "viewstudents";
+	}
+	
+	
+
+}

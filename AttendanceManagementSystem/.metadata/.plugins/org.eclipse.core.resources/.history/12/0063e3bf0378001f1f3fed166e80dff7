@@ -1,0 +1,40 @@
+package com.ex;
+
+import java.sql.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+public class AttendedEntity {
+	
+	private int id;
+	private String branch;
+	private int studentsattended;
+	@DateTimeFormat(pattern="yyyy-MM-dd")
+	private Date attendancedate;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getBranch() {
+		return branch;
+	}
+	public void setBranch(String branch) {
+		this.branch = branch;
+	}
+	public int getStudentsattended() {
+		return studentsattended;
+	}
+	public void setStudentsattended(int studentsattended) {
+		this.studentsattended = studentsattended;
+	}
+	public Date getAttendancedate() {
+		return attendancedate;
+	}
+	public void setAttendancedate(Date attendancedate) {
+		this.attendancedate = attendancedate;
+	}
+	
+
+}
